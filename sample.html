@@ -1,0 +1,824 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <!--
+    Chaupal Connect — competition landing page
+    Required home filename: sample.html (must appear in the live URL).
+    Static HTML/CSS/JS only — no templates, no animation software.
+  -->
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description"
+    content="Chaupal Connect — a modern village social network. Meet neighbours, discuss local issues, and share news under the digital banyan tree.">
+  <meta name="keywords"
+    content="village social network, chaupal, community calendar, voice to text, rural India, local news">
+  <meta name="author" content="Chaupal Connect">
+  <meta name="theme-color" content="#C4704A">
+  <title>Chaupal Connect | Your Village, Your Voice, Your Digital Chaupal</title>
+  <link rel="icon" type="image/svg+xml" href="assets/svg/favicon.svg">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,600;9..144,700&family=Source+Sans+3:wght@400;500;600;700&display=swap"
+    rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+  <!-- Keyboard users jump past the ticker + sticky nav -->
+  <a class="skip-link" href="#main-content">Skip to main content</a>
+
+  <!-- Contest requirement: Gossip / News ticker (Village Buzz) -->
+  <aside class="news-ticker" aria-label="Village news and gossip ticker">
+    <div class="ticker-label">
+      <img src="assets/svg/megaphone.svg" alt="Megaphone icon for village news" title="Village Buzz megaphone"
+        width="16" height="16">
+      <span>Village Buzz</span>
+    </div>
+    <div class="ticker-wrap">
+      <div class="ticker-track" id="ticker-track">
+        <span class="ticker-item">New hand pump installed near the primary school — water supply restored!</span>
+        <span class="ticker-item">Gram Sabha meeting scheduled for 5 August at 10:00 AM under the banyan tree.</span>
+        <span class="ticker-item">Congratulations to Ravi Kumar for winning the district kabaddi tournament!</span>
+        <span class="ticker-item">Monsoon crop update: Paddy fields are thriving after last week's rainfall.</span>
+        <span class="ticker-item">Health camp on Sunday at the community centre — free check-ups for all ages.</span>
+        <span class="ticker-item">Road repair work on Main Street begins next Monday. Plan your travel
+          accordingly.</span>
+        <!-- Duplicate set for seamless marquee loop -->
+        <span class="ticker-item" aria-hidden="true">New hand pump installed near the primary school — water supply
+          restored!</span>
+        <span class="ticker-item" aria-hidden="true">Gram Sabha meeting scheduled for 5 August at 10:00 AM under the
+          banyan tree.</span>
+        <span class="ticker-item" aria-hidden="true">Congratulations to Ravi Kumar for winning the district kabaddi
+          tournament!</span>
+        <span class="ticker-item" aria-hidden="true">Monsoon crop update: Paddy fields are thriving after last week's
+          rainfall.</span>
+        <span class="ticker-item" aria-hidden="true">Health camp on Sunday at the community centre — free check-ups for
+          all ages.</span>
+        <span class="ticker-item" aria-hidden="true">Road repair work on Main Street begins next Monday. Plan your
+          travel accordingly.</span>
+      </div>
+    </div>
+  </aside>
+
+  <!-- Sticky header: logo + desktop nav. Hamburger only on small screens. -->
+  <header class="site-header" id="top">
+    <div class="container header-inner">
+      <a href="#top" class="logo" aria-label="Chaupal Connect — Home">
+        <img src="assets/svg/logo.svg" alt="Chaupal Connect banyan tree logo" title="Chaupal Connect logo" width="40"
+          height="40" class="logo-icon">
+        <span class="logo-text">Chaupal Connect</span>
+      </a>
+
+      <nav class="desktop-nav" aria-label="Primary navigation">
+        <ul class="nav-list">
+          <li><a href="#about" class="nav-link">About</a></li>
+          <li><a href="#features" class="nav-link">Features</a></li>
+          <li><a href="#feed" class="nav-link">Feed</a></li>
+          <li><a href="#voice" class="nav-link">Voice</a></li>
+          <li><a href="#calendar" class="nav-link">Fairs</a></li>
+          <li><a href="#faq" class="nav-link">FAQ</a></li>
+        </ul>
+        <a href="#join" class="btn btn-primary btn-nav">Join Chaupal</a>
+      </nav>
+
+      <button class="nav-toggle" id="nav-toggle" type="button" aria-expanded="false" aria-controls="mobile-nav"
+        aria-label="Open navigation menu">
+        <img src="assets/svg/menu.svg" alt="Open menu" title="Open navigation menu" width="24" height="24"
+          class="icon-menu">
+        <img src="assets/svg/close.svg" alt="Close menu" title="Close navigation menu" width="24" height="24"
+          class="icon-close">
+      </button>
+    </div>
+  </header>
+
+  <!-- Drawer is outside <header> so sticky height / overflow never break -->
+  <div class="mobile-nav" id="mobile-nav" hidden>
+    <nav aria-label="Mobile navigation">
+      <ul class="mobile-nav-list">
+        <li><a href="#about" class="mobile-nav-link">About</a></li>
+        <li><a href="#features" class="mobile-nav-link">Features</a></li>
+        <li><a href="#feed" class="mobile-nav-link">Feed</a></li>
+        <li><a href="#voice" class="mobile-nav-link">Voice</a></li>
+        <li><a href="#calendar" class="mobile-nav-link">Fairs</a></li>
+        <li><a href="#faq" class="mobile-nav-link">FAQ</a></li>
+      </ul>
+      <a href="#join" class="btn btn-primary btn-nav mobile-nav-cta">Join Chaupal</a>
+    </nav>
+  </div>
+  <button type="button" class="nav-backdrop" id="nav-backdrop" aria-label="Close menu" hidden></button>
+
+  <main id="main-content">
+
+    <!-- Hero: brand first, one headline, one CTA group, one visual -->
+    <section class="hero" aria-labelledby="hero-heading">
+      <div class="hero-atmosphere" aria-hidden="true"></div>
+      <div class="container hero-grid">
+        <div class="hero-copy">
+          <p class="hero-brand">Chaupal Connect</p>
+          <p class="hero-eyebrow">
+            <img src="assets/svg/banyan-tree.svg" alt="Banyan tree icon" title="Banyan tree icon" width="18" height="18"
+              aria-hidden="true">
+            The Digital Banyan Tree
+          </p>
+          <h1 id="hero-heading">Where Every Villager Has a Voice</h1>
+          <p class="hero-subtitle">
+            Meet neighbours, discuss local issues, and share village news —
+            a warm social network inspired by gathering under the banyan tree.
+          </p>
+          <div class="hero-actions">
+            <a href="#join" class="btn btn-primary btn-lg">
+              Join Your Village
+              <img src="assets/svg/arrow-right.svg" alt="Continue" title="Continue" width="18" height="18"
+                aria-hidden="true">
+            </a>
+            <a href="#features" class="btn btn-secondary btn-lg">See Features</a>
+          </div>
+          <ul class="hero-points">
+            <li>Village Buzz ticker</li>
+            <li>Village Feed</li>
+            <li>Fair calendar</li>
+            <li>Voice-to-Text</li>
+          </ul>
+        </div>
+        <div class="hero-visual">
+          <img src="assets/images/hero-village.svg" alt="Villagers gathered under the digital banyan tree"
+            title="Villagers gathered under the digital banyan tree" width="800" height="640" class="hero-image">
+        </div>
+      </div>
+    </section>
+
+    <!-- About: digital banyan-tree story (maps to contest concept) -->
+    <section class="section about" id="about" aria-labelledby="about-heading">
+      <div class="container about-grid">
+        <div class="about-visual reveal">
+          <img src="assets/images/community-gathering.svg"
+            alt="Villagers discussing local issues together at the community chaupal"
+            title="Community gathering at the village chaupal" width="600" height="400" loading="lazy">
+        </div>
+        <div class="about-content reveal">
+          <p class="section-eyebrow">Our Story</p>
+          <h2 id="about-heading">The Banyan Tree, Reimagined for Today</h2>
+          <p class="section-lead">
+            For generations, villagers have gathered under the banyan tree to share
+            stories, solve problems, and stay connected. Chaupal Connect brings that
+            timeless tradition into the digital age.
+          </p>
+          <p>
+            Report a broken streetlight, celebrate a neighbour's achievement, or find
+            the next village fair — this is your community's meeting place, open to everyone.
+          </p>
+          <ul class="about-list">
+            <li>
+              <img src="assets/svg/users.svg" alt="Community members" title="Community members" width="20" height="20"
+                aria-hidden="true">
+              <span>Connect with every household in your village</span>
+            </li>
+            <li>
+              <img src="assets/svg/chat.svg" alt="Discussion" title="Discussion" width="20" height="20"
+                aria-hidden="true">
+              <span>Discuss local issues and find community solutions</span>
+            </li>
+            <li>
+              <img src="assets/svg/news.svg" alt="Village news" title="Village news" width="20" height="20"
+                aria-hidden="true">
+              <span>Stay updated with village news and announcements</span>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <!-- Features: first three cards = contest must-haves (ticker, calendar, voice) -->
+    <section class="section features" id="features" aria-labelledby="features-heading">
+      <div class="container">
+        <header class="section-header section-header-center reveal">
+          <p class="section-eyebrow">What We Offer</p>
+          <h2 id="features-heading">Built for Every Villager</h2>
+          <p class="section-lead">
+            Simple, warm, and inclusive tools designed for real village life.
+          </p>
+        </header>
+
+        <div class="features-highlight reveal">
+          <article class="highlight-card">
+            <div class="feature-icon" aria-hidden="true">
+              <img src="assets/svg/megaphone.svg" alt="Gossip and news ticker" title="Gossip and news ticker" width="28"
+                height="28">
+            </div>
+            <h3>Gossip &amp; News Ticker</h3>
+            <p>A live scrolling feed of village buzz — weddings, festivals, crop updates, and Panchayat decisions.</p>
+            <span class="feature-badge">Village Buzz</span>
+          </article>
+          <article class="highlight-card">
+            <div class="feature-icon" aria-hidden="true">
+              <img src="assets/svg/calendar.svg" alt="Community fair calendar" title="Community fair calendar"
+                width="28" height="28">
+            </div>
+            <h3>Community Fair Calendar</h3>
+            <p>Never miss a mela, haat, or cultural event. Browse upcoming fairs and invite your neighbours.</p>
+            <span class="feature-badge">Fair Calendar</span>
+          </article>
+          <article class="highlight-card">
+            <div class="feature-icon" aria-hidden="true">
+              <img src="assets/svg/mic.svg" alt="Voice-to-text for accessibility"
+                title="Voice-to-text for accessibility" width="28" height="28">
+            </div>
+            <h3>Voice-to-Text</h3>
+            <p>Speak in your own language and let Chaupal Connect write it for you — built for elders and every voice.
+            </p>
+            <span class="feature-badge">Accessibility</span>
+          </article>
+        </div>
+
+        <div class="features-grid reveal">
+          <article class="feature-card">
+            <div class="feature-icon" aria-hidden="true">
+              <img src="assets/svg/chat.svg" alt="Issue discussion boards" title="Issue discussion boards" width="28"
+                height="28">
+            </div>
+            <h3>Issue Discussion Boards</h3>
+            <p>Raise concerns about water, roads, or schools — and solve them together with neighbours.</p>
+          </article>
+          <article class="feature-card">
+            <div class="feature-icon" aria-hidden="true">
+              <img src="assets/svg/users.svg" alt="Neighbour directory" title="Neighbour directory" width="28"
+                height="28">
+            </div>
+            <h3>Neighbour Directory</h3>
+            <p>Find families across your village. Share resources and strengthen community bonds.</p>
+          </article>
+          <article class="feature-card">
+            <div class="feature-icon" aria-hidden="true">
+              <img src="assets/svg/banyan-tree.svg" alt="Digital chaupal" title="Digital chaupal" width="28"
+                height="28">
+            </div>
+            <h3>Digital Chaupal</h3>
+            <p>A virtual gathering space open day and night — chat, listen to elders, and share stories.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- Feed: optional product preview so judges feel a “social” surface (no backend) -->
+    <section class="section feed-section" id="feed" aria-labelledby="feed-heading">
+      <div class="container">
+        <header class="section-header section-header-center reveal">
+          <p class="section-eyebrow">Village Feed</p>
+          <h2 id="feed-heading">What Neighbours Are Saying</h2>
+          <p class="section-lead">
+            A preview of the community feed — share news, raise local issues, and support each other under the digital
+            banyan tree.
+          </p>
+        </header>
+
+        <div class="feed-layout reveal">
+          <aside class="feed-composer" aria-label="Share a village update">
+            <h3>Share an update</h3>
+            <p class="feed-composer-note">Demo only — posts stay in your browser for this visit.</p>
+            <label class="visually-hidden" for="feed-author">Your name</label>
+            <input type="text" id="feed-author" class="feed-input" maxlength="40" placeholder="Your name"
+              autocomplete="name">
+            <label class="visually-hidden" for="feed-type">Post type</label>
+            <select id="feed-type" class="feed-input" aria-label="Post type">
+              <option value="news">News</option>
+              <option value="issue">Issue</option>
+              <option value="celebration">Celebration</option>
+            </select>
+            <label class="visually-hidden" for="feed-message">Your message</label>
+            <textarea id="feed-message" class="feed-input feed-textarea" rows="3" maxlength="220"
+              placeholder="Tell your village…"></textarea>
+            <p class="form-error feed-error" id="feed-error" role="alert" hidden></p>
+            <button type="button" class="btn btn-primary btn-block" id="feed-post-btn">Post to Chaupal</button>
+          </aside>
+
+          <div class="feed-main">
+            <div class="feed-filters" role="group" aria-label="Filter village posts">
+              <button type="button" class="feed-filter is-active" data-filter="all" aria-pressed="true">All</button>
+              <button type="button" class="feed-filter" data-filter="news" aria-pressed="false">News</button>
+              <button type="button" class="feed-filter" data-filter="issue" aria-pressed="false">Issues</button>
+              <button type="button" class="feed-filter" data-filter="celebration"
+                aria-pressed="false">Celebrations</button>
+            </div>
+
+            <div class="feed-list" id="feed-list" role="list" aria-live="polite" aria-relevant="additions">
+              <article class="feed-card" role="listitem" data-type="issue">
+                <header class="feed-card-head">
+                  <img src="assets/svg/users.svg" alt="Villager avatar" title="Villager avatar" width="40" height="40"
+                    class="feed-avatar">
+                  <div>
+                    <p class="feed-author">Sunita Devi</p>
+                    <p class="feed-meta">Rampur · 2 hours ago · <span class="feed-tag feed-tag-issue">Issue</span></p>
+                  </div>
+                </header>
+                <p class="feed-body">The streetlight near the primary school has been dark for three nights. Children
+                  walking home after tuition feel unsafe. Can the Panchayat check this?</p>
+                <footer class="feed-actions">
+                  <button type="button" class="feed-action" data-action="support" aria-pressed="false">
+                    Support <span class="feed-count">18</span>
+                  </button>
+                  <button type="button" class="feed-action" data-action="save" aria-pressed="false">Save</button>
+                </footer>
+              </article>
+
+              <article class="feed-card" role="listitem" data-type="celebration">
+                <header class="feed-card-head">
+                  <img src="assets/svg/sun.svg" alt="Villager avatar" title="Villager avatar" width="40" height="40"
+                    class="feed-avatar">
+                  <div>
+                    <p class="feed-author">Amit Yadav</p>
+                    <p class="feed-meta">Deoria · Yesterday · <span
+                        class="feed-tag feed-tag-celebration">Celebration</span></p>
+                  </div>
+                </header>
+                <p class="feed-body">Proud of Ravi Kumar — our village won the district kabaddi final! Tea and sweets at
+                  Main Chowk this evening. Everyone welcome.</p>
+                <footer class="feed-actions">
+                  <button type="button" class="feed-action" data-action="support" aria-pressed="false">
+                    Support <span class="feed-count">42</span>
+                  </button>
+                  <button type="button" class="feed-action" data-action="save" aria-pressed="false">Save</button>
+                </footer>
+              </article>
+
+              <article class="feed-card" role="listitem" data-type="news">
+                <header class="feed-card-head">
+                  <img src="assets/svg/news.svg" alt="Villager avatar" title="Villager avatar" width="40" height="40"
+                    class="feed-avatar">
+                  <div>
+                    <p class="feed-author">Gram Sabha Desk</p>
+                    <p class="feed-meta">Village Centre · Today · <span class="feed-tag feed-tag-news">News</span></p>
+                  </div>
+                </header>
+                <p class="feed-body">Free health camp this Sunday at the community centre — check-ups for all ages.
+                  Bring your Aadhaar card if you have one. Voice updates also on Village Buzz.</p>
+                <footer class="feed-actions">
+                  <button type="button" class="feed-action" data-action="support" aria-pressed="false">
+                    Support <span class="feed-count">27</span>
+                  </button>
+                  <button type="button" class="feed-action" data-action="save" aria-pressed="false">Save</button>
+                </footer>
+              </article>
+
+              <article class="feed-card" role="listitem" data-type="news">
+                <header class="feed-card-head">
+                  <img src="assets/svg/leaf.svg" alt="Villager avatar" title="Villager avatar" width="40" height="40"
+                    class="feed-avatar">
+                  <div>
+                    <p class="feed-author">Lakshmi Bai</p>
+                    <p class="feed-meta">Bilaspur · 3 days ago · <span class="feed-tag feed-tag-news">News</span></p>
+                  </div>
+                </header>
+                <p class="feed-body">Weekly haat is shifting to Saturday this week because of road work. Fresh
+                  vegetables, pottery, and sweets from 6 AM at Main Chowk.</p>
+                <footer class="feed-actions">
+                  <button type="button" class="feed-action" data-action="support" aria-pressed="false">
+                    Support <span class="feed-count">15</span>
+                  </button>
+                  <button type="button" class="feed-action" data-action="save" aria-pressed="false">Save</button>
+                </footer>
+              </article>
+            </div>
+            <p class="feed-empty" id="feed-empty" hidden>No posts in this category yet. Try another filter or share an
+              update.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Voice-to-Text: contest accessibility feature — live Web Speech demo -->
+    <section class="section voice-section" id="voice" aria-labelledby="voice-heading">
+      <div class="container voice-layout">
+        <div class="voice-copy reveal">
+          <p class="section-eyebrow">Try It Now</p>
+          <h2 id="voice-heading">Speak. We Write.</h2>
+          <p class="section-lead">
+            Choose the language you speak, tap the microphone, and watch your
+            words appear. Tap again to stop. No keyboard needed.
+          </p>
+          <ul class="voice-points">
+            <li>
+              <img src="assets/svg/mic.svg" alt="Microphone" title="Microphone" width="18" height="18"
+                aria-hidden="true">
+              Supports Hindi, English, and major Indian languages
+            </li>
+            <li>
+              <img src="assets/svg/leaf.svg" alt="Inclusive" title="Inclusive" width="18" height="18"
+                aria-hidden="true">
+              Designed for elders and people who prefer speaking
+            </li>
+            <li>
+              <img src="assets/svg/sun.svg" alt="Private" title="Private" width="18" height="18" aria-hidden="true">
+              Copy the transcript into any village discussion
+            </li>
+          </ul>
+        </div>
+
+        <div class="voice-demo reveal" id="voice-demo">
+          <div class="voice-demo-header">
+            <div class="voice-demo-icon">
+              <img src="assets/svg/mic.svg" alt="Voice to text microphone" title="Voice-to-Text demo" width="24"
+                height="24">
+            </div>
+            <div>
+              <h3>Voice-to-Text</h3>
+              <p>Turn speech into a village post</p>
+            </div>
+          </div>
+
+          <div class="voice-language-field">
+            <label for="voice-language">I am speaking in</label>
+            <select id="voice-language" class="voice-language">
+              <option value="en-IN" selected>English (India)</option>
+              <option value="hi-IN">हिन्दी — Hindi</option>
+              <option value="pa-IN">ਪੰਜਾਬੀ — Punjabi</option>
+              <option value="bn-IN">বাংলা — Bengali</option>
+              <option value="mr-IN">मराठी — Marathi</option>
+              <option value="gu-IN">ગુજરાતી — Gujarati</option>
+              <option value="ta-IN">தமிழ் — Tamil</option>
+              <option value="te-IN">తెలుగు — Telugu</option>
+            </select>
+          </div>
+
+          <div class="voice-transcript">
+            <div class="voice-transcript-header">
+              <span>Transcript</span>
+              <span class="voice-listening-badge" id="voice-listening-badge" hidden>
+                <span class="voice-listening-dot" aria-hidden="true"></span>
+                Listening
+              </span>
+            </div>
+            <div class="voice-transcript-panel" id="voice-transcript-panel" aria-live="polite">
+              <p class="voice-transcript-placeholder" id="voice-transcript-placeholder">
+                Your words will appear here as you speak.
+              </p>
+              <p class="voice-listening-text" id="voice-listening-text" hidden>
+                Listening for your words…
+              </p>
+              <p class="voice-transcript-text" id="voice-transcript-text" hidden>
+                <span id="voice-final-text"></span><span class="voice-interim-text" id="voice-interim-text"></span>
+              </p>
+            </div>
+          </div>
+
+          <div class="voice-controls">
+            <button type="button" class="btn btn-primary" id="voice-start" aria-pressed="false">
+              <img src="assets/svg/mic.svg" alt="Start listening" title="Start listening" width="18" height="18"
+                aria-hidden="true">
+              <span id="voice-btn-label">Start Speaking</span>
+            </button>
+            <button type="button" class="btn btn-secondary" id="voice-copy" disabled>Copy</button>
+            <button type="button" class="btn btn-secondary" id="voice-clear">Clear</button>
+          </div>
+          <p class="voice-status" id="voice-status" role="status" aria-live="polite">
+            Choose a language (English is selected), then tap Start Speaking.
+          </p>
+          <p class="voice-browser-note">Best experienced in Chrome or Edge with microphone access.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Fair calendar: contest-required community calendar for local melas/haats -->
+    <section class="section calendar-section" id="calendar" aria-labelledby="calendar-heading">
+      <div class="container">
+        <header class="section-header section-header-center reveal">
+          <p class="section-eyebrow">Community Calendar</p>
+          <h2 id="calendar-heading">Upcoming Fairs &amp; Events</h2>
+          <p class="section-lead">
+            Mark your calendar for the celebrations, markets, and gatherings that bring our village together.
+          </p>
+        </header>
+
+        <div class="calendar-layout">
+          <div class="calendar-visual reveal">
+            <img src="assets/images/village-fair.svg"
+              alt="Colourful village fair with market stalls and festive banners"
+              title="Local village fair and community celebration" width="600" height="400" loading="lazy">
+          </div>
+
+          <div class="calendar-events reveal" role="list" aria-label="Upcoming village fairs and events">
+            <article class="event-card" role="listitem">
+              <div class="event-date" aria-label="15 August 2026">
+                <span class="event-month">Aug</span>
+                <span class="event-day">15</span>
+              </div>
+              <div class="event-details">
+                <h3>Independence Day Mela</h3>
+                <p>Flag hoisting, cultural performances, and a food fair at the village ground.</p>
+                <span class="event-location">Village Ground · 8:00 AM</span>
+              </div>
+            </article>
+
+            <article class="event-card" role="listitem">
+              <div class="event-date" aria-label="22 August 2026">
+                <span class="event-month">Aug</span>
+                <span class="event-day">22</span>
+              </div>
+              <div class="event-details">
+                <h3>Weekly Haat Bazaar</h3>
+                <p>Fresh produce, handicrafts, and household goods from neighbouring villages.</p>
+                <span class="event-location">Main Chowk · 6:00 AM</span>
+              </div>
+            </article>
+
+            <article class="event-card" role="listitem">
+              <div class="event-date" aria-label="5 September 2026">
+                <span class="event-month">Sep</span>
+                <span class="event-day">05</span>
+              </div>
+              <div class="event-details">
+                <h3>Ganesh Chaturthi Celebration</h3>
+                <p>Community puja, prasad distribution, and evening aarti by the temple pond.</p>
+                <span class="event-location">Temple Chowk · 5:00 PM</span>
+              </div>
+            </article>
+
+            <article class="event-card" role="listitem">
+              <div class="event-date" aria-label="14 September 2026">
+                <span class="event-month">Sep</span>
+                <span class="event-day">14</span>
+              </div>
+              <div class="event-details">
+                <h3>Kisan Diwas Fair</h3>
+                <p>Agricultural exhibition, seed exchange, and expert talks on organic farming.</p>
+                <span class="event-location">Community Hall · 9:00 AM</span>
+              </div>
+            </article>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Gallery: village life visuals (SVG illustrations — original, not stock photos) -->
+    <section class="section gallery" id="gallery" aria-labelledby="gallery-heading">
+      <div class="container">
+        <header class="section-header section-header-center reveal">
+          <p class="section-eyebrow">Village Life</p>
+          <h2 id="gallery-heading">Moments From Our Chaupal</h2>
+          <p class="section-lead">A glimpse of the gardens, forests, solar fields, and learning spaces we share.</p>
+        </header>
+        <div class="gallery-grid reveal">
+          <figure class="gallery-item">
+            <img src="assets/images/gallery-garden.svg" alt="Community vegetable garden with villagers tending plants"
+              title="Village community garden" width="400" height="300" loading="lazy">
+            <figcaption>Community Garden</figcaption>
+          </figure>
+          <figure class="gallery-item">
+            <img src="assets/images/gallery-forest.svg" alt="Lush village forest path lined with trees"
+              title="Village forest trail" width="400" height="300" loading="lazy">
+            <figcaption>Forest Trail</figcaption>
+          </figure>
+          <figure class="gallery-item">
+            <img src="assets/images/gallery-solar.svg" alt="Solar panels lighting rural homes in the village"
+              title="Village solar power" width="400" height="300" loading="lazy">
+            <figcaption>Solar Fields</figcaption>
+          </figure>
+          <figure class="gallery-item">
+            <img src="assets/images/gallery-lab.svg" alt="Students learning technology in the village digital lab"
+              title="Village digital learning lab" width="400" height="300" loading="lazy">
+            <figcaption>Learning Lab</figcaption>
+          </figure>
+        </div>
+      </div>
+    </section>
+
+    <!-- Testimonials — social proof for the product story -->
+    <section class="section voices" id="voices" aria-labelledby="voices-heading">
+      <div class="container">
+        <header class="section-header section-header-center reveal">
+          <p class="section-eyebrow">Village Voices</p>
+          <h2 id="voices-heading">What Our Neighbours Say</h2>
+          <p class="section-lead">
+            Real change begins when every neighbour can be heard.
+          </p>
+        </header>
+        <div class="voices-grid reveal">
+          <blockquote class="voice-card">
+            <img src="assets/svg/quote.svg" alt="Quotation mark" title="Quotation mark" width="28" height="28"
+              class="quote-icon" aria-hidden="true">
+            <p>
+              "I posted about the broken hand pump, and within two days the Panchayat
+              fixed it. This app truly listens to villagers like us."
+            </p>
+            <footer>
+              <cite>— Sunita Devi, Farmer, Rampur Village</cite>
+            </footer>
+          </blockquote>
+          <blockquote class="voice-card">
+            <img src="assets/svg/quote.svg" alt="Quotation mark" title="Quotation mark" width="28" height="28"
+              class="quote-icon" aria-hidden="true">
+            <p>
+              "My father cannot read or write, but he speaks into the phone and
+              his message appears on the screen. Now he shares stories every evening."
+            </p>
+            <footer>
+              <cite>— Amit Yadav, Shopkeeper, Deoria Village</cite>
+            </footer>
+          </blockquote>
+          <blockquote class="voice-card">
+            <img src="assets/svg/quote.svg" alt="Quotation mark" title="Quotation mark" width="28" height="28"
+              class="quote-icon" aria-hidden="true">
+            <p>
+              "The fair calendar helped our family plan for the mela. We sold twice
+              as many sweets because we knew the date weeks in advance."
+            </p>
+            <footer>
+              <cite>— Lakshmi Bai, Sweet Shop Owner, Bilaspur</cite>
+            </footer>
+          </blockquote>
+        </div>
+      </div>
+    </section>
+
+    <!-- FAQ: answers judges/users ask about free use, voice, news, fairs -->
+    <section class="section faq" id="faq" aria-labelledby="faq-heading">
+      <div class="container faq-container">
+        <header class="section-header reveal">
+          <p class="section-eyebrow">FAQ</p>
+          <h2 id="faq-heading">Common Questions</h2>
+          <p class="section-lead">Everything you need to know about joining Chaupal Connect.</p>
+        </header>
+        <div class="faq-list reveal" role="list">
+          <div class="faq-item" role="listitem">
+            <h3>
+              <button class="faq-question" type="button" aria-expanded="false" id="faq-btn-1"
+                aria-controls="faq-answer-1">
+                Is Chaupal Connect free to use?
+                <img src="assets/svg/chevron-down.svg" alt="Expand answer" title="Expand answer" width="20" height="20"
+                  class="faq-chevron" aria-hidden="true">
+              </button>
+            </h3>
+            <div class="faq-answer" id="faq-answer-1" role="region" aria-labelledby="faq-btn-1" hidden>
+              <p>
+                Yes, completely free. Chaupal Connect is built for every villager —
+                no subscriptions, no hidden charges. All you need is a mobile phone
+                with an internet connection.
+              </p>
+            </div>
+          </div>
+          <div class="faq-item" role="listitem">
+            <h3>
+              <button class="faq-question" type="button" aria-expanded="false" id="faq-btn-2"
+                aria-controls="faq-answer-2">
+                How does the Voice-to-Text feature work?
+                <img src="assets/svg/chevron-down.svg" alt="Expand answer" title="Expand answer" width="20" height="20"
+                  class="faq-chevron" aria-hidden="true">
+              </button>
+            </h3>
+            <div class="faq-answer" id="faq-answer-2" role="region" aria-labelledby="faq-btn-2" hidden>
+              <p>
+                Choose the language you speak, tap Start Speaking, and talk clearly.
+                Your words appear live and can be copied into a village post. Tap the
+                button again to stop. The demo supports Hindi, English, and several
+                major Indian languages.
+              </p>
+            </div>
+          </div>
+          <div class="faq-item" role="listitem">
+            <h3>
+              <button class="faq-question" type="button" aria-expanded="false" id="faq-btn-3"
+                aria-controls="faq-answer-3">
+                Can I post news and gossip for my village?
+                <img src="assets/svg/chevron-down.svg" alt="Expand answer" title="Expand answer" width="20" height="20"
+                  class="faq-chevron" aria-hidden="true">
+              </button>
+            </h3>
+            <div class="faq-answer" id="faq-answer-3" role="region" aria-labelledby="faq-btn-3" hidden>
+              <p>
+                Absolutely. Any registered villager can share news, announcements,
+                or friendly gossip. Posts appear on the Village Buzz ticker and in
+                your community feed for all neighbours to see.
+              </p>
+            </div>
+          </div>
+          <div class="faq-item" role="listitem">
+            <h3>
+              <button class="faq-question" type="button" aria-expanded="false" id="faq-btn-4"
+                aria-controls="faq-answer-4">
+                How do I find upcoming fairs and events?
+                <img src="assets/svg/chevron-down.svg" alt="Expand answer" title="Expand answer" width="20" height="20"
+                  class="faq-chevron" aria-hidden="true">
+              </button>
+            </h3>
+            <div class="faq-answer" id="faq-answer-4" role="region" aria-labelledby="faq-btn-4" hidden>
+              <p>
+                Visit the Community Calendar section to browse all upcoming fairs,
+                melas, and cultural events. You can set reminders and share event
+                details with your family and friends.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Join: registration CTA — validated in the browser, no server -->
+    <section class="section cta" id="join" aria-labelledby="cta-heading">
+      <div class="container cta-shell reveal">
+        <div class="cta-copy">
+          <h2 id="cta-heading">Your Village Is Waiting for You</h2>
+          <p>
+            Join Chaupal Connect today and become part of the digital banyan tree.
+            Share your voice, stay informed, and strengthen your community — free for every villager.
+          </p>
+        </div>
+
+        <form class="join-form" id="join-form" novalidate>
+          <div class="form-row">
+            <div class="form-field">
+              <label for="join-name">Full name</label>
+              <input type="text" id="join-name" name="name" autocomplete="name" required placeholder="Sunita Devi"
+                maxlength="80">
+            </div>
+            <div class="form-field">
+              <label for="join-village">Village</label>
+              <input type="text" id="join-village" name="village" required placeholder="Rampur" maxlength="80">
+            </div>
+          </div>
+          <div class="form-row">
+            <div class="form-field">
+              <label for="join-phone">Mobile number</label>
+              <input type="tel" id="join-phone" name="phone" autocomplete="tel" required placeholder="98765 43210"
+                pattern="[0-9+\s\-]{10,15}" maxlength="15">
+            </div>
+            <div class="form-field">
+              <label for="join-lang">Preferred language</label>
+              <select id="join-lang" name="language" required>
+                <option value="">Select language</option>
+                <option value="hindi">Hindi</option>
+                <option value="english">English</option>
+                <option value="regional">Regional language</option>
+              </select>
+            </div>
+          </div>
+          <p class="form-error" id="join-error" role="alert" hidden></p>
+          <button type="submit" class="btn btn-accent btn-lg btn-block">
+            Register Now — It Is Free
+          </button>
+          <p class="form-note">No spam. We only use your details to welcome you to your village chaupal.</p>
+        </form>
+
+        <div class="join-success" id="join-success" hidden tabindex="-1">
+          <img src="assets/svg/sprout.svg" alt="Sprout celebrating successful registration"
+            title="Welcome to Chaupal Connect" width="48" height="48">
+          <h3>Welcome to the Chaupal!</h3>
+          <p id="join-success-msg">You are on the list. Your digital banyan tree is ready.</p>
+          <a href="#calendar" class="btn btn-ghost btn-lg">View Fair Calendar</a>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-grid">
+      <div class="footer-brand">
+        <a href="#top" class="logo footer-logo" aria-label="Chaupal Connect — Home">
+          <img src="assets/svg/logo.svg" alt="Chaupal Connect logo" title="Chaupal Connect" width="36" height="36">
+          <span class="logo-text">Chaupal Connect</span>
+        </a>
+        <p class="footer-tagline">Your village. Your voice. Your digital chaupal.</p>
+      </div>
+      <nav class="footer-nav" aria-label="Footer navigation">
+        <h2 class="footer-heading">Quick Links</h2>
+        <ul>
+          <li><a href="#about">About</a></li>
+          <li><a href="#features">Features</a></li>
+          <li><a href="#feed">Village Feed</a></li>
+          <li><a href="#voice">Voice-to-Text</a></li>
+          <li><a href="#calendar">Fair Calendar</a></li>
+          <li><a href="#gallery">Gallery</a></li>
+          <li><a href="#faq">FAQ</a></li>
+          <li><a href="#join">Join</a></li>
+        </ul>
+      </nav>
+      <div class="footer-contact">
+        <h2 class="footer-heading">Contact</h2>
+        <address>
+          <p>Chaupal Connect Team</p>
+          <p>Gram Panchayat Road, Village Centre</p>
+          <p><a href="mailto:hello@chaupalconnect.in">hello@chaupalconnect.in</a></p>
+          <p><a href="tel:+919876543210">+91 98765 43210</a></p>
+        </address>
+      </div>
+      <div class="footer-hours">
+        <h2 class="footer-heading">Support Hours</h2>
+        <p>Monday – Saturday</p>
+        <p>9:00 AM – 6:00 PM</p>
+        <p>Voice-to-Text help available</p>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <div class="container footer-bottom-inner">
+        <p>&copy; 2026 Chaupal Connect. All rights reserved.</p>
+        <p class="footer-credit">Built with warmth for every village.</p>
+      </div>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+
+</html>

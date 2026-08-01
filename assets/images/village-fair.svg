@@ -1,0 +1,16 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 400" role="img" aria-labelledby="fairTitle fairDesc">
+  <title id="fairTitle">Village fair with colourful stalls</title>
+  <desc id="fairDesc">Illustration of a local village fair with market stalls, festive banners, and community celebration</desc>
+  <rect width="600" height="400" fill="#E8D5B5"/>
+  <rect x="0" y="320" width="600" height="80" fill="#8B9A5B"/>
+  <rect x="80" y="200" width="100" height="120" fill="#C4704A"/>
+  <polygon points="80,200 130,150 180,200" fill="#D4A82A"/>
+  <rect x="250" y="180" width="100" height="140" fill="#6B7F3C"/>
+  <polygon points="250,180 300,120 350,180" fill="#C4704A"/>
+  <rect x="420" y="210" width="100" height="110" fill="#D4A82A"/>
+  <polygon points="420,210 470,160 520,210" fill="#6B7F3C"/>
+  <path d="M60 150 Q300 80 540 150" stroke="#C4704A" stroke-width="3" fill="none" stroke-dasharray="8 6"/>
+  <circle cx="150" cy="130" r="8" fill="#D4A82A"/>
+  <circle cx="300" cy="100" r="8" fill="#C4704A"/>
+  <circle cx="450" cy="130" r="8" fill="#6B7F3C"/>
+</svg>

@@ -1,0 +1,17 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 400" role="img" aria-labelledby="labTitle labDesc">
+  <title id="labTitle">Students conducting water quality experiments</title>
+  <desc id="labDesc">Illustration of a science lab with beakers, test tubes, and water samples on a bench</desc>
+  <rect width="600" height="400" fill="#E8F5E9"/>
+  <rect x="0" y="300" width="600" height="100" fill="#D8E8D8"/>
+  <rect x="60" y="120" width="480" height="180" rx="12" fill="#FFFFFF" stroke="#1B4332" stroke-width="2"/>
+  <rect x="100" y="200" width="60" height="80" rx="4" fill="#74C0FC" opacity="0.7"/>
+  <rect x="180" y="180" width="50" height="100" rx="4" fill="#4DABF7" opacity="0.6"/>
+  <rect x="260" y="190" width="55" height="90" rx="4" fill="#63E6BE" opacity="0.7"/>
+  <rect x="350" y="170" width="40" height="40" rx="20" fill="#FFD43B" opacity="0.5"/>
+  <line x1="370" y1="210" x2="370" y2="280" stroke="#868E96" stroke-width="3"/>
+  <ellipse cx="370" cy="285" rx="30" ry="8" fill="#ADB5BD"/>
+  <circle cx="450" cy="230" r="35" fill="#A5D8FF" opacity="0.5" stroke="#1B4332" stroke-width="2"/>
+  <path d="M120 160h360" stroke="#CED4DA" stroke-width="2"/>
+  <rect x="80" y="80" width="120" height="30" rx="6" fill="#1B4332"/>
+  <text x="95" y="100" fill="#F5F0E8" font-family="sans-serif" font-size="14" font-weight="600">Eco Lab</text>
+</svg>

@@ -1,0 +1,29 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 400" role="img" aria-labelledby="gardenTitle gardenDesc">
+  <title id="gardenTitle">School organic garden with raised beds</title>
+  <desc id="gardenDesc">Illustration of students tending raised garden beds with green plants under a sunny sky</desc>
+  <defs>
+    <linearGradient id="sky1" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#B7E4C7"/>
+      <stop offset="100%" stop-color="#F5F0E8"/>
+    </linearGradient>
+    <linearGradient id="soil1" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#6B4C35"/>
+      <stop offset="100%" stop-color="#8B6347"/>
+    </linearGradient>
+  </defs>
+  <rect width="600" height="400" fill="url(#sky1)"/>
+  <circle cx="480" cy="80" r="50" fill="#F4D58D" opacity="0.9"/>
+  <ellipse cx="300" cy="340" rx="320" ry="60" fill="#2D6A4F" opacity="0.3"/>
+  <rect x="80" y="240" width="180" height="80" rx="8" fill="url(#soil1)"/>
+  <rect x="90" y="220" width="160" height="30" rx="4" fill="#40916C"/>
+  <rect x="340" y="250" width="200" height="70" rx="8" fill="url(#soil1)"/>
+  <rect x="350" y="230" width="180" height="30" rx="4" fill="#52B788"/>
+  <circle cx="130" cy="210" r="18" fill="#1B4332"/>
+  <circle cx="160" cy="200" r="22" fill="#2D6A4F"/>
+  <circle cx="190" cy="212" r="16" fill="#40916C"/>
+  <circle cx="400" cy="215" r="20" fill="#1B4332"/>
+  <circle cx="430" cy="205" r="24" fill="#2D6A4F"/>
+  <circle cx="470" cy="218" r="17" fill="#52B788"/>
+  <rect x="250" y="280" width="12" height="60" fill="#8B6347"/>
+  <ellipse cx="256" cy="270" rx="40" ry="30" fill="#40916C"/>
+</svg>

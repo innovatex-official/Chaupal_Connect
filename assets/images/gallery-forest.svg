@@ -1,0 +1,19 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 400" role="img" aria-labelledby="forestTitle forestDesc">
+  <title id="forestTitle">Students on a forest trail field trip</title>
+  <desc id="forestDesc">Illustration of a winding forest path through tall trees with dappled sunlight</desc>
+  <defs>
+    <linearGradient id="forestSky" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#95D5B2"/>
+      <stop offset="100%" stop-color="#D8F3DC"/>
+    </linearGradient>
+  </defs>
+  <rect width="600" height="400" fill="url(#forestSky)"/>
+  <ellipse cx="150" cy="350" rx="100" ry="200" fill="#1B4332" opacity="0.8"/>
+  <ellipse cx="300" cy="330" rx="90" ry="220" fill="#2D6A4F" opacity="0.85"/>
+  <ellipse cx="450" cy="340" rx="110" ry="210" fill="#1B4332" opacity="0.8"/>
+  <ellipse cx="80" cy="360" rx="70" ry="160" fill="#40916C" opacity="0.7"/>
+  <ellipse cx="520" cy="355" rx="80" ry="170" fill="#2D6A4F" opacity="0.75"/>
+  <path d="M200 400 Q280 280 350 320 T500 400" fill="none" stroke="#8B6347" stroke-width="24" stroke-linecap="round"/>
+  <path d="M200 400 Q280 280 350 320 T500 400" fill="none" stroke="#A67C52" stroke-width="8" stroke-linecap="round" stroke-dasharray="12 16"/>
+  <circle cx="400" cy="100" r="30" fill="#F4D58D" opacity="0.6"/>
+</svg>
